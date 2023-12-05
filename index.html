@@ -48,7 +48,6 @@
       margin-right: auto;
       width: 50%;
     }
-
   </style>
 
 
@@ -70,10 +69,9 @@
         <h2>An Analysis of AN IMAGE IS WORTH 16X16 WORDS :</h2>
         <p>Describe the paper and the big question about it that interests you.</p>
         <figure class="center">
-          <img src="./images/figures/transformer-architecture.gif" height="400px" width="400px">
-          <figcaption>Fig1 : soruce Google ai blog</figcaption>
+          <img src="./images/figures/transformer-architecture.gif" width="80%">
+          <figcaption>Figure1: source Google AI blog</figcaption>
         </figure>
-
       </div>
     </div>
     <div class="row">
@@ -225,20 +223,13 @@
         </h2>
 
         <p>
-
-          Section 3 (Aditya) and 4(gega)
-
-          and Appendix A,B,C, D
-          <br>
-
           Transformers had been recently proposed by Vaswani et al in <a href="#transformer">[2]</a> and had become
           state of the art for language related tasks. The authors of this paper wanted to come up with a solution
           which was as close as possible to the original Transformer so that other language based approaches to scale
           the architecture could be used out of the box.
           Hence, they chose to use the same architecture setup as done by the authors in <a href="#transformer">[2]</a>.
           However, as the original Transformer requires a 1D sequence of tokens, the authors had to figure out a way to
-          convert an image
-          , which is 2-Dimensional, into a 1-D sequence of information.<br>
+          convert an image, which is 2-Dimensional, into a 1-D sequence of information.<br>
 
           In order to solve this, the input images (of dimension <i>H</i> and <i>W</i>) were reshaped into <i>N</i>
           patches of size <i>P</i>,
@@ -271,33 +262,19 @@
           The original architecture consists of alternating layers of multihead self-attention (MSA) and MLP blocks with
           LayerNorm and Residual Connections being applied after every block. Mathematically, the layers can be
           described as shown in equation <a href="#eq1">1</a> <br>
-
-        <figure id="eq1" class="center">
-          <img src="./images/figures/eq-1.jpg" width="800">
+        </p>
+        <figure id="eq1" class="text-center">
+          <img src="./images/figures/eq-1.jpg" width="60%">
           <figcaption>Equation 1 : Mathematical expression for transformer layers </figcaption>
         </figure>
-        As the transformer block does not have any CNN layers which may lead to neighbourhood structure being learnt,
-        the model instead learns the 2D positions as well as the spatial relations
-        of the patches making it free of any sort of inductive bias.
-        Furthermore, the authors propose another way to generate patchh embeddings by using a CNN feature map to extract
-        patches instead of generating raw patches.
-
-
-
-
-
-
-
-
+        <p>
+          As the transformer block does not have any CNN layers which may lead to neighbourhood structure being learnt,
+          the model instead learns the 2D positions as well as the spatial relations
+          of the patches making it free of any sort of inductive bias.
+          Furthermore, the authors propose another way to generate patchh embeddings by using a CNN feature map to
+          extract
+          patches instead of generating raw patches.
         </p>
-
-
-
-
-
-        </p>
-
-
         <br>
 
         <strong>
@@ -359,22 +336,26 @@
         <h2>Industry Applications</h2>
         <p>
 
-          Due to the rich latent space that vision transformer learn, this architecture was quickly adopted in the industry
-           and has become one of the most used architectures for production grade ML models. Some of the industries which use Vision based transformers are : 
+          Due to the rich latent space that vision transformer learn, this architecture was quickly adopted in the
+          industry
+          and has become one of the most used architectures for production grade ML models. Some of the industries which
+          use Vision based transformers are :
 
-          <ul>
-            <li> Autonomous Vehicle: It is highly speculated that Tesla's <a href = "https://www.youtube.com/watch?v=j0z4FweCy4M">Full Self-Driving software</a> 
-              uses a Vision transformer based architecture as its backbone. Similary Nvidia's self driving car platform as well is rumored to have a transformer based backbone!
+        <ul>
+          <li> Autonomous Vehicle: It is highly speculated that Tesla's <a
+              href="https://www.youtube.com/watch?v=j0z4FweCy4M">Full Self-Driving software</a>
+            uses a Vision transformer based architecture as its backbone. Similary Nvidia's self driving car platform as
+            well is rumored to have a transformer based backbone!
 
-            </li>
-            <li>
-              Medical Imaging
-            </li>
-            <li>
-              Augumented Reality 
-            </li>
+          </li>
+          <li>
+            Medical Imaging
+          </li>
+          <li>
+            Augumented Reality
+          </li>
 
-          </ul>
+        </ul>
         </p>
         <h2>Follow-on Research</h2>
         <p>
@@ -405,7 +386,7 @@
 
           <li>
             Many attempts have been made to introduce add convolutions to the transformer blocks in order
-            to make the model more efficient and robust. Some significant approaches are: 
+            to make the model more efficient and robust. Some significant approaches are:
             <ul>
               <li><a href="https://arxiv.org/abs/2103.15808">CvT (Introducing convolutions to Vision Transformers)</a>
               </li>
@@ -418,8 +399,10 @@
             </ul>
           </li>
           <li>
-            Liu et al propose the <a href = " https://arxiv.org/pdf/2103.14030.pdf">Swin Transformer </a>which leverages a heirarchical transformer whose representation is
-             computed with shifted windows which limits self-attention to non-overlapping local windows and instead uses cross attention for global context. 
+            Liu et al propose the <a href=" https://arxiv.org/pdf/2103.14030.pdf">Swin Transformer </a>which leverages a
+            heirarchical transformer whose representation is
+            computed with shifted windows which limits self-attention to non-overlapping local windows and instead uses
+            cross attention for global context.
           </li>
 
         </ul>
