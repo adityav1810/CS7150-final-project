@@ -218,14 +218,56 @@ Neil Houlsby : Senior Staff Research Scientist at Google, Zurich. PhD  in Comput
         <h2>
           Novel Work by the Paper (Diagrammer)
         </h2>
+        <br>
+
+        <strong>
+          The variants of the ViT architecture follow the ones from BERT:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/tab1.png" width="50%">
+        </div>
+        <br>
+
+        <strong>
+          Comparing to state-of-the-art models on popular image classification:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/tab2.png" width="60%">
+        </div>
+        <br>
+
+        <strong>
+          Pre-training data and computation requirements compared to BiT:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/fig3-4.png" width="60%">
+          <img src="images/figures/fig5.png" width="60%">
+        </div>
+        <br>
+
+        <strong>
+          Some lower layer attention heads behave like convolutional layers, focusing on local patches, while others
+          have a more global view:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/fig7.png" width="60%">
+        </div>
         <p>
-
-          Section 3 (Aditya) and 4(gega)
-
-          and Appendix A,B,C, D
-
+          The authors have experimented with different positional embeddings, curiously, explicitly including 2-D
+          information in them does not improve performance, as the model learns to encode it implicitly:
         </p>
+        <div class="text-center">
+          <img src="images/figures/tab8.png" width="60%">
+        </div>
+        <br>
 
+        <strong>
+          Using Attention Rollout to visualize the attention maps show that the model learns to attend to the
+          semantically relevant parts of the image:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/fig6.png" width="20%">
+        </div>
 
 
         <h2>Social Impact</h2>
