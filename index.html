@@ -40,6 +40,15 @@
     th {
       background-color: #f2f2f2;
     }
+
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
   </style>
 
 
@@ -60,12 +69,18 @@
       <div class="col justify-content-center text-center">
         <h2>An Analysis of AN IMAGE IS WORTH 16X16 WORDS :</h2>
         <p>Describe the paper and the big question about it that interests you.</p>
+        <figure class="center">
+          <img src="./images/figures/transformer-architecture.gif" height="400px" width="400px">
+          <figcaption>Fig1 : soruce Google ai blog</figcaption>
+        </figure>
+
       </div>
     </div>
     <div class="row">
       <div class="col">
 
         <h2>Literature Review</h2>
+
         <p>The main motivation of behind ViT was the success of using Transformers for NLP tasks. The dominant approach
           of pre-training the model on large dataset and fine-tuning by small task-specific datasets (BERT and GPT) was
           limited to textual data, as directly applying self-attention mechanism to pixels was computationally
@@ -108,18 +123,7 @@
           Some members are now at different research groups but have collaborated together frequently in the past.
           Another major research they conducted was "Scaling Vision Transformers to 22 billion parameters".
           Most of the researches in this study work on scaling deep networks for vision tasks. <br>
-          <!-- 
 
-Alexander Kolesnikov : Research Engineer @ Google Deepmind. Previously PhD at IST Austria, and applied math MSc at Moscow State University.<br>
-Dirk Weissenborn :  Based out of Germany, Ex-Google, Meta, DeepMind. currently working at Inceptive Inc. <br>
-Xiaohua Zhai : Seniour Staff Researcher at Google, Zurich. PhD from Peking University, China. Interested in vision, representation learning and generative modelling. <br>
-Thomas Unterthiner : ML Engineer at Google, PhD from Johannes Kepler Universitat, Germany.<br>
-Mostafa Dehghani : Research Scientist at Google, Ex-Apple. PhD from University of Amsterdam. <br>
-Matthias Minderer : Senior Research Scientist at Google, PhD from Harvard under Christopher Harvey, Ex Neuroscience Major at ETH Zurich, also studied Biochemistry at University of Cambridge . Interested in representation learning of vision tasks. <br>
-Georg Heigold : Research Scientist at Google, Mountain View , CA. Diploma in Physics from ETH Zurich. His research interests include automatic speech recognition, discriminative training, and log-linear modeling.<br>
-Sylvain Gelly : Deep learning researcher at Google Brain, Zurich. Likes to work on reinforcement learning and dynamic programming. <br>
-Jakob Uszkoreit : One of the authors of the original transformer paper, Maybe one of the most cited authors on this panel. Cofounded Inceptive  Ex Googler. <br>
-Neil Houlsby : Senior Staff Research Scientist at Google, Zurich. PhD  in Computational Biology from University of Cambridge. Research interests include Bayesian ML, Cognitive Science and Active Learning. <br> -->
         <table>
           <tr>
             <th>Name</th>
@@ -200,6 +204,7 @@ Neil Houlsby : Senior Staff Research Scientist at Google, Zurich. PhD  in Comput
             <td>Jakob Uszkoreit</td>
             <td><img src="images/authors/jakob.jpeg" height="100px" width="100px"></td>
             <td>Co-founder @ Inceptive</td>
+
             <td>One of the authors of the original transformer paper, Maybe one of the most cited authors on this
               panel. Ex Googler.</td>
           </tr>
@@ -218,6 +223,81 @@ Neil Houlsby : Senior Staff Research Scientist at Google, Zurich. PhD  in Comput
         <h2>
           Novel Work by the Paper (Diagrammer)
         </h2>
+
+        <p>
+
+          Section 3 (Aditya) and 4(gega)
+
+          and Appendix A,B,C, D
+          <br>
+
+          Transformers had been recently proposed by Vaswani et al in <a href="#transformer">[2]</a> and had become
+          state of the art for language related tasks. The authors of this paper wanted to come up with a solution
+          which was as close as possible to the original Transformer so that other language based approaches to scale
+          the architecture could be used out of the box.
+          Hence, they chose to use the same architecture setup as done by the authors in <a href="#transformer">[2]</a>.
+          However, as the original Transformer requires a 1D sequence of tokens, the authors had to figure out a way to
+          convert an image
+          , which is 2-Dimensional, into a 1-D sequence of information.<br>
+
+          In order to solve this, the input images (of dimension <i>H</i> and <i>W</i>) were reshaped into <i>N</i>
+          patches of size <i>P</i>,
+          where in <i>N</i> was calculated by computing HW &frasl; P<sup>2</sup>. The output of this operation were
+          described as patch embeddings.
+          Similary to its natural language counterpart which uses BERT's [class] tokens, it was essential to prepend a
+          learnable embedding to
+          the patch embeddings whose state at the output of the Encoder block could be used as the image
+          representations. <br>
+
+          The transformer architecture is a suitable architecture for language related tasks as they are rich in
+          sequence and the architecture adds encodes the position of text
+          along with the text as position embeddings. These positional embeddings are key to the architecture. In order
+          to mimic this charachterstic in vision, positional embeddings
+          are added into the patch embeddings which help retain position information of the patches. The resulting
+          embedding vector is used as input to the encoder block of the transformer.
+
+
+        <h4> The Vision Transformer architecture</h4>
+
+        <p>
+          Up until this time, CNNs based architectures achieved state-of-the-art performance of vision tasks due to
+          their wonderful ability to have robust neighbourhood structure
+          and translational equivaraince, however, as the network grew deeper they were prone to information loss.
+          Residual Connections mitigated this to some extent.
+          However, the transformer block consists of MLP units which capture local and translational equivaraince and
+          the Attention units are focused on capturing global context.
+          This ability to inherintly capture local as well as global context make the transformer architecture solve
+
+          The original architecture consists of alternating layers of multihead self-attention (MSA) and MLP blocks with
+          LayerNorm and Residual Connections being applied after every block. Mathematically, the layers can be
+          described as shown in equation <a href="#eq1">1</a> <br>
+
+        <figure id="eq1" class="center">
+          <img src="./images/figures/eq-1.jpg" width="800">
+          <figcaption>Equation 1 : Mathematical expression for transformer layers </figcaption>
+        </figure>
+        As the transformer block does not have any CNN layers which may lead to neighbourhood structure being learnt,
+        the model instead learns the 2D positions as well as the spatial relations
+        of the patches making it free of any sort of inductive bias.
+        Furthermore, the authors propose another way to generate patchh embeddings by using a CNN feature map to extract
+        patches instead of generating raw patches.
+
+
+
+
+
+
+
+
+        </p>
+
+
+
+
+
+        </p>
+
+
         <br>
 
         <strong>
@@ -278,27 +358,96 @@ Neil Houlsby : Senior Staff Research Scientist at Google, Zurich. PhD  in Comput
         </p>
         <h2>Industry Applications</h2>
         <p>
-          Independent of paper, personal research by Aditya.
+
+          Due to the rich latent space that vision transformer learn, this architecture was quickly adopted in the industry
+           and has become one of the most used architectures for production grade ML models. Some of the industries which use Vision based transformers are : 
+
+          <ul>
+            <li> Autonomous Vehicle: It is highly speculated that Tesla's <a href = "https://www.youtube.com/watch?v=j0z4FweCy4M">Full Self-Driving software</a> 
+              uses a Vision transformer based architecture as its backbone. Similary Nvidia's self driving car platform as well is rumored to have a transformer based backbone!
+
+            </li>
+            <li>
+              Medical Imaging
+            </li>
+            <li>
+              Augumented Reality 
+            </li>
+
+          </ul>
         </p>
         <h2>Follow-on Research</h2>
         <p>
-          Independent of paper, personal research by Aditya.
+          This study was the first to bring the transformer architecture to vision which soon became one of the most
+          popular methods.
+          This led to various aspects of the model being subjected to improvement. A few areas of research which have
+          led to significant improvements in the transformer architecture are
+        <ul>
+          <li>
+            The authors of this paper are really interested in scaling the models, they leverage the power laws and
+            propose structural changes to the
+            architecture which results in the following research <a href="https://arxiv.org/abs/2106.04560">Scaling
+              Vision Transformers</a><br>
+          </li>
+
+
+          <li> Since then many studies have tried to make the architecture more efficient, some of which are
+            <ul>
+              <li>
+                <a href="https://arxiv.org/abs/2107.01378">Efficient Vision Transformers via Fine-Grained Manifold
+                  Distillation</a>
+              </li>
+              <li> <a href="https://arxiv.org/abs/2106.09785"> EsViT (Efficient self-supervised Vision Transformers)</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li>
+            Many attempts have been made to introduce add convolutions to the transformer blocks in order
+            to make the model more efficient and robust. Some significant approaches are: 
+            <ul>
+              <li><a href="https://arxiv.org/abs/2103.15808">CvT (Introducing convolutions to Vision Transformers)</a>
+              </li>
+              <li><a href="https://arxiv.org/abs/2103.10697">ConViT (Improving Vision Transformers with Soft
+                  Convolutional Inductive Biases)</a> </li>
+              <li><a href="https://arxiv.org/abs/2104.06399">Co-Scale Conv-Attentional Image Transformers (CoaT)</a>
+              </li>
+              <li><a href="https://arxiv.org/abs/2104.12533">Visformer (The Vision-friendly Transformer)</a> </li>
+
+            </ul>
+          </li>
+          <li>
+            Liu et al propose the <a href = " https://arxiv.org/pdf/2103.14030.pdf">Swin Transformer </a>which leverages a heirarchical transformer whose representation is
+             computed with shifted windows which limits self-attention to non-overlapping local windows and instead uses cross attention for global context. 
+          </li>
+
+        </ul>
         </p>
         <h2>Peer Review</h2>
         <p>
           Independent of paper, personal research by Aditya.
         </p>
 
-        <p>Optionally, in addition to a reading-based analysis, implement the ideas of the paper in code, and report
-          on your findings.
+
+        <p>Optionally, in addition to a reading-based analysis, implement the ideas of the paper in code, and report on
+          your findings.
+
         </p>
 
         <h3>References</h3>
 
-        <p><a name="vision-transformer">[1]</a> <a href="https://arxiv.org/pdf/2010.11929.pdf">L&eacute;on Bottou and
-            Patrick Gallinari.
-            <em>A framework for the cooperation of learning algorithms.</em></a>
-          Advances in neural information processing systems 3 (1990).
+
+        <p>
+          <a name="vision-transformer">[1]</a> <a href="https://arxiv.org/pdf/2010.11929.pdf">
+            Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale."
+            arXiv preprint arXiv:2010.11929 (2020).</a><br>
+          <a name="transformer">[2]</a><a
+            href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">
+            Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30
+            (2017).</a><br>
+
+
         </p>
 
         <h2>Team Members</h2>
