@@ -41,12 +41,14 @@
       background-color: #f2f2f2;
     }
 
+
     .center {
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 50%;
     }
+
   </style>
 
 
@@ -71,25 +73,57 @@
           <img src="./images/figures/transformer-architecture.gif" height="400px" width="400px">
           <figcaption>Fig1 : soruce Google ai blog</figcaption>
         </figure>
+
       </div>
     </div>
     <div class="row">
       <div class="col">
 
         <h2>Literature Review</h2>
-        by Gega
-        <p>Add related work based on section 1 and 2 (Related Work)
-        </p>
 
+        <p>The main motivation of behind ViT was the success of using Transformers for NLP tasks. The dominant approach
+          of pre-training the model on large dataset and fine-tuning by small task-specific datasets (BERT and GPT) was
+          limited to textual data, as directly applying self-attention mechanism to pixels was computationally
+          intractable due to very large input size (image pixels). Often attention mechanism was considered in
+          conjunction with convolutional layers.</p>
+        <p>Some attempts had been made to make the self-attention mechanism work for images:</p>
+        <ul>
+          <li>Replacing global self-attention with just local, neighboring pixels:
+            <ul>
+              <li>Image Transformer (Parmar 2018)</li>
+              <li>Stand-Alone Self-Attention in Vision Models (Ramachandran 2019)</li>
+              <li>Exploring Self-attention for Image Recognition (Zhao 2020)</li>
+            </ul>
+          </li>
+          <li>Approximations to global self-attention:
+            <ul>
+              <li>Sparse Transformers (Child 2019)</li>
+            </ul>
+          </li>
+          <li>Applying the attention mechanism for just rows/columns:
+            <ul>
+              <li>Axial attention in multidimensional transformers (Ho 2019)</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Many of these specialized attention architectures above demonstrated promising results on computer vision
+          tasks, but require complex engineering to be implemented efficiently on hardware accelerators.</p>
+        <p>Most significant and similar work to ViT was On the Relationship between Self-Attention and Convolutional
+          Layer (Cordonnier 2020). Key finding: “we prove that a multi-head self-attention layer with sufficient number
+          of heads is at least as expressive as any convolutional layer”. However, the paper lacked the evaluation of
+          the method against state-of-the-art models, was limited to 2x2 image patches
+          that hindered the scalability and thus only worked on small resolution images.</p>
+        <p>The authors of the paper built on top of their prior work Big Transfer (BiT) on CNN transfer learning
+          (Kolesnikov 2020 and Djolonga 2020), comparing the approach already done on ResNet to the Transformer
+          architecture.</p>
         <h2>Biography</h2>
         <p>
-
-          This team does not have a star studded lineup , However they are highly motivated researchers working at the
-          Google HQ in Zurich.
-          They are deeply interested in applying deep learning techniques to vision related tasks.
+          This team doesnt have well known names in it, However they are highly motivated researchers working at
+          Google interested in applying deep learning techniques to vision related tasks.
           Some members are now at different research groups but have collaborated together frequently in the past.
           Another major research they conducted was "Scaling Vision Transformers to 22 billion parameters".
           Most of the researches in this study work on scaling deep networks for vision tasks. <br>
+
         <table>
           <tr>
             <th>Name</th>
@@ -170,8 +204,9 @@
             <td>Jakob Uszkoreit</td>
             <td><img src="images/authors/jakob.jpeg" height="100px" width="100px"></td>
             <td>Co-founder @ Inceptive</td>
-            <td>One of the authors of the original transformer paper, Maybe one of the most cited authors on this panel.
-              Ex Googler.</td>
+
+            <td>One of the authors of the original transformer paper, Maybe one of the most cited authors on this
+              panel. Ex Googler.</td>
           </tr>
           <tr>
             <td>Neil Houlsby</td>
@@ -188,6 +223,7 @@
         <h2>
           Novel Work by the Paper (Diagrammer)
         </h2>
+
         <p>
 
           Section 3 (Aditya) and 4(gega)
@@ -262,6 +298,57 @@
         </p>
 
 
+        <br>
+
+        <strong>
+          The variants of the ViT architecture follow the ones from BERT:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/tab1.png" width="50%">
+        </div>
+        <br>
+
+        <strong>
+          Comparing to state-of-the-art models on popular image classification:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/tab2.png" width="60%">
+        </div>
+        <br>
+
+        <strong>
+          Pre-training data and computation requirements compared to BiT:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/fig3-4.png" width="60%">
+          <img src="images/figures/fig5.png" width="60%">
+        </div>
+        <br>
+
+        <strong>
+          Some lower layer attention heads behave like convolutional layers, focusing on local patches, while others
+          have a more global view:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/fig7.png" width="60%">
+        </div>
+        <p>
+          The authors have experimented with different positional embeddings, curiously, explicitly including 2-D
+          information in them does not improve performance, as the model learns to encode it implicitly:
+        </p>
+        <div class="text-center">
+          <img src="images/figures/tab8.png" width="60%">
+        </div>
+        <br>
+
+        <strong>
+          Using Attention Rollout to visualize the attention maps show that the model learns to attend to the
+          semantically relevant parts of the image:
+        </strong>
+        <div class="text-center">
+          <img src="images/figures/fig6.png" width="20%">
+        </div>
+
 
         <h2>Social Impact</h2>
         <p>
@@ -271,6 +358,7 @@
         </p>
         <h2>Industry Applications</h2>
         <p>
+
           Due to the rich latent space that vision transformer learn, this architecture was quickly adopted in the industry
            and has become one of the most used architectures for production grade ML models. Some of the industries which use Vision based transformers are : 
 
@@ -335,19 +423,20 @@
           </li>
 
         </ul>
-
-
         </p>
         <h2>Peer Review</h2>
         <p>
           Independent of paper, personal research by Aditya.
         </p>
 
+
         <p>Optionally, in addition to a reading-based analysis, implement the ideas of the paper in code, and report on
           your findings.
+
         </p>
 
         <h3>References</h3>
+
 
         <p>
           <a name="vision-transformer">[1]</a> <a href="https://arxiv.org/pdf/2010.11929.pdf">
@@ -357,6 +446,7 @@
             href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">
             Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30
             (2017).</a><br>
+
 
         </p>
 
