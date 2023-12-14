@@ -66,8 +66,7 @@
   <div class="container">
     <div class="row">
       <div class="col justify-content-center text-center">
-        <h2>An Analysis of AN IMAGE IS WORTH 16X16 WORDS :</h2>
-        <p>Describe the paper and the big question about it that interests you.</p>
+        <h2>An Analysis of AN IMAGE IS WORTH 16X16 WORDS</h2>
         <figure class="center">
           <img src="./images/figures/transformer-architecture.gif" width="80%">
           <figcaption>Figure1: source Google AI blog</figcaption>
@@ -88,40 +87,61 @@
         <ul>
           <li>Replacing global self-attention with just local, neighboring pixels:
             <ul>
-              <li>Image Transformer (Parmar 2018)</li>
-              <li>Stand-Alone Self-Attention in Vision Models (Ramachandran 2019)</li>
-              <li>Exploring Self-attention for Image Recognition (Zhao 2020)</li>
+              <li><a href="https://arxiv.org/abs/1802.05751">Transformer (Parmar 2018)</a> - "By restricting the
+                self-attention mechanism to attend to local neighborhoods we significantly increase the size of
+                images the model can process in practice, despite maintaining significantly larger receptive fields per
+                layer than typical convolutional neural networks."</li>
+              <li><a href="https://arxiv.org/abs/1906.05909">Self-Attention in Vision Models (Ramachandran 2019)</a> -
+                "we verify that self-attention can
+                indeed be an effective stand-alone layer. A simple procedure of replacing all
+                instances of spatial convolutions with a form of self-attention applied to ResNet model produces a fully
+                self-attentional model that outperforms the baseline on ImageNet classification with 12% fewer FLOPS and
+                29% fewer parameters."
+              </li>
+              <li><a href="https://arxiv.org/abs/2004.13621">Self-attention for Image Recognition (Zhao 2020)</a> - "Our
+                pairwise self-attention networks match or outperform their convolutional counterparts, and the patchwise
+                models substantially outperform the convolutional baselines."
+              </li>
             </ul>
           </li>
           <li>Approximations to global self-attention:
             <ul>
-              <li>Sparse Transformers (Child 2019)</li>
+              <li><a href="https://arxiv.org/abs/1904.10509">Long Sequences with Sparse Transformers (Child 2019)</a>
+              </li>
             </ul>
           </li>
           <li>Applying the attention mechanism for just rows/columns:
             <ul>
-              <li>Axial attention in multidimensional transformers (Ho 2019)</li>
+              <li><a href="https://arxiv.org/abs/1912.12180">Axial attention in Multidimensional Transformers (Ho
+                  2019)</a> - "Our architecture, by contrast, maintainsboth full expressiveness over joint distributions
+                over data and ease of implementation with standard deep learning frameworks, while requiring reasonable
+                memory and computation and achieving state-of-the-art results on standard generative modeling
+                benchmarks."</li>
             </ul>
           </li>
         </ul>
         <p>Many of these specialized attention architectures above demonstrated promising results on computer vision
           tasks, but require complex engineering to be implemented efficiently on hardware accelerators.</p>
-        <p>Most significant and similar work to ViT was On the Relationship between Self-Attention and Convolutional
-          Layer (Cordonnier 2020). Key finding: "we prove that a multi-head self-attention layer with sufficient number
-          of heads is at least as expressive as any convolutional layer". However, the paper lacked the evaluation of
-          the method against state-of-the-art models, was limited to 2x2 image patches
+        <p>Most significant and similar work to ViT was <a href="https://arxiv.org/abs/1911.03584">On the Relationship
+            between Self-Attention and Convolutional
+            Layer (Cordonnier 2020)</a>. Key finding: "we prove that a multi-head self-attention layer with sufficient
+          number of heads is at least as expressive as any convolutional layer". However, the paper lacked the
+          evaluation of the method against state-of-the-art models, was limited to 2x2 image patches
           that hindered the scalability and thus only worked on small resolution images.</p>
         <p>The authors of the paper built on top of their prior work Big Transfer (BiT) on CNN transfer learning
           (Kolesnikov 2020 and Djolonga 2020), comparing the approach already done on ResNet to the Transformer
           architecture.</p>
         <h2>Biography</h2>
         <p>
-          This study is part of a sequence of studies that this research group at Google , Zurich have been conducting for a couple of years. 
-          They are highly motivated researchers with 
-          backgrounds in Computer Science, Neuroscience, Physics and Biology working with deep learning architectures for computer vision tasks. 
-          They also love to scale networks both ways (create smaller and more efficient networks as well as create big networks with SOTA performance). 
+          This study is part of a sequence of studies that this research group at Google , Zurich have been conducting
+          for a couple of years.
+          They are highly motivated researchers with
+          backgrounds in Computer Science, Neuroscience, Physics and Biology working with deep learning architectures
+          for computer vision tasks.
+          They also love to scale networks both ways (create smaller and more efficient networks as well as create big
+          networks with SOTA performance).
           Some members are now at different research groups but have collaborated together frequently in the past.
- <br>
+          <br>
 
         <table>
           <tr>
@@ -136,7 +156,7 @@
             <td><img src="images/authors/alexd.jpeg" height="100px" width="100px"></td>
             <td>Google Research</td>
             <td>Ex Intel, left Google for an year to setup Inceptive with Jakob, recently returned back. PhD in
-              Mathematics from Lomonosov Moscow State University. 66095  Citations </td>
+              Mathematics from Lomonosov Moscow State University. 66095 Citations </td>
 
           </tr>
           <tr>
@@ -156,7 +176,7 @@
             <td>Dirk Weissenborn</td>
             <td><img src="images/authors/dirk.jpeg" height="100px" width="100px"></td>
             <td>Inceptive Inc.</td>
-            <td>Based out of Germany, Ex-Google, Meta, DeepMind. 28727	Citations</td>
+            <td>Based out of Germany, Ex-Google, Meta, DeepMind. 28727 Citations</td>
           </tr>
           <tr>
             <td>Xiaohua Zhai</td>
@@ -183,7 +203,8 @@
             <td><img src="images/authors/matthias.jpeg" height="100px" width="100px"></td>
             <td>Google Research</td>
             <td>PhD from Harvard under Christopher Harvey, Ex Neuroscience Major at ETH Zurich, also studied
-              Biochemistry at University of Cambridge . Interested in representation learning of vision tasks. 27314 Citations</td>
+              Biochemistry at University of Cambridge . Interested in representation learning of vision tasks. 27314
+              Citations</td>
           </tr>
           <tr>
             <td>Georg Heigold</td>
@@ -253,21 +274,21 @@
 
 
         <p>
-          <figure class="center">
-            <img src="./images/figures/fig1.jpg" width="80%">
-            <figcaption>Figure : Vision Transformer Structure </figcaption>
-          </figure>
-          Up until this time, CNNs based architectures achieved state-of-the-art performance of vision tasks due to
-          their wonderful ability to have robust neighbourhood structure
-          and translational equivaraince, however, as the network grew deeper they were prone to information loss.
-          Residual Connections mitigated this to some extent.
-          However, the transformer block consists of MLP units which capture local and translational equivaraince and
-          the Attention units are focused on capturing global context.
-          This ability to inherintly capture local as well as global context make the transformer architecture solve
+        <figure class="center">
+          <img src="./images/figures/fig1.jpg" width="80%">
+          <figcaption>Figure : Vision Transformer Structure </figcaption>
+        </figure>
+        Up until this time, CNNs based architectures achieved state-of-the-art performance of vision tasks due to
+        their wonderful ability to have robust neighbourhood structure
+        and translational equivaraince, however, as the network grew deeper they were prone to information loss.
+        Residual Connections mitigated this to some extent.
+        However, the transformer block consists of MLP units which capture local and translational equivaraince and
+        the Attention units are focused on capturing global context.
+        This ability to inherintly capture local as well as global context make the transformer architecture solve
 
-          The original architecture consists of alternating layers of multihead self-attention (MSA) and MLP blocks with
-          LayerNorm and Residual Connections being applied after every block. Mathematically, the layers can be
-          described as shown in equation <a href="#eq1">1</a> <br>
+        The original architecture consists of alternating layers of multihead self-attention (MSA) and MLP blocks with
+        LayerNorm and Residual Connections being applied after every block. Mathematically, the layers can be
+        described as shown in equation <a href="#eq1">1</a> <br>
         </p>
         <figure id="eq1" class="text-center">
           <img src="./images/figures/eq-1.jpg" width="60%">
@@ -280,9 +301,9 @@
           Furthermore, the authors propose another way to generate patchh embeddings by using a CNN feature map to
           extract patches instead of generating raw patches.
 
-        
+
         </p>
-        
+
         <br>
 
         <strong>
@@ -387,19 +408,24 @@
             uses a Vision transformer based architecture as its backbone. Similary Nvidia's self driving car platform as
             well is rumored to have a transformer based backbone!
           </li>
-    
-            <li>
-              Medical Imaging : Due to the inherent charachterstic of transformers to pay attention to the global context, they have proven to work exceptionally
-              well on medical imaging tasks such as detecting types of cancers from CT scans and restoring high quality scans from low quality images. 
-            </li>
-            <li>
-              Augumented Reality : ViTs can improve the recognition and tracking capabilities in AR and VR applications, providing more realistic and immersive experiences.
-            </li>
-            <li>
-              Document Analysis and OCR: ViTs can be used for optical character recognition (OCR) in document analysis. They can extract text and information from images or scanned documents, streamlining data entry and document processing workflows.
-            </li>
 
-          </ul>
+          <li>
+            Medical Imaging : Due to the inherent charachterstic of transformers to pay attention to the global context,
+            they have proven to work exceptionally
+            well on medical imaging tasks such as detecting types of cancers from CT scans and restoring high quality
+            scans from low quality images.
+          </li>
+          <li>
+            Augumented Reality : ViTs can improve the recognition and tracking capabilities in AR and VR applications,
+            providing more realistic and immersive experiences.
+          </li>
+          <li>
+            Document Analysis and OCR: ViTs can be used for optical character recognition (OCR) in document analysis.
+            They can extract text and information from images or scanned documents, streamlining data entry and document
+            processing workflows.
+          </li>
+
+        </ul>
 
         </p>
         <h2>Follow-on Research</h2>
@@ -453,60 +479,95 @@
         </ul>
         </p>
         <h2>Peer Review</h2>
+        <h5>Summary</h5>
         <p>
-          The paper challenges traditional convolutional neural networks (CNNs) with a novel architecture inspired by natural language processing. 
-          This results in a new approach to computer vision tasks with proves to be efficient and scalable at the same time. The paper itself is really well written 
-          with clear objectives defined and ample proof to justify the motivations behind each proposed novelity.
-          The authors also conduct extensive ablation studies particularly with the embedding layers as well as other architectures to prove their proposed method is an improvement from the commpared approaches. 
-          This research also changed the persepctive of the vision community, since this paper, there has been a tremendous amount of interest in scaling and improving transformers. 
-        One of the key strengths of this paper lies in its empirical validation. The authors demonstrate the superior performance of ViTs on benchmark datasets, outperforming state-of-the-art CNNs. The scalability of ViTs allows them to be trained on massive datasets, showcasing their potential for handling diverse and extensive visual information.
-
-          The paper not only highlights the success of ViTs in image classification but also introduces the concept of pre-training on large datasets and fine-tuning on task-specific data. This transfer learning strategy proves to be instrumental in achieving remarkable results with limited labeled data.
-          Moreover, the authors delve into the interpretability of ViTs, showcasing their ability to highlight relevant image regions. The attention maps generated by ViTs provide insights into the model's decision-making process, contributing to improved transparency and understanding a critical aspect in real-world applications.
-        </p>
-        <p> Food for thought : 
-          <ul>
-            <li>
-              Instead of just using a linear projection, can we do something better? 
-              maybe use a pretraining to learn better representaions of the input embeddings? 
-            </li>
-            <li>
-             The main comparison done by the authors is against BiT<a href = "#bit">[3]</a> paper. Other architectures such as Bag of visual words could be used for comparison. 
-            </li> 
-
-          </ul>
- </p>
-
-        <h3>References</h3>
-
-
-        <p>
-          <a name="vision-transformer">[1]</a> <a href="https://arxiv.org/pdf/2010.11929.pdf">
-            Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale."
-            arXiv preprint arXiv:2010.11929 (2020).</a><br>
-          <a name="transformer">[2]</a><a
-            href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">
-            Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30
-            (2017).</a><br>
-<a name="bit">[3]</a><a
-            href="https://arxiv.org/abs/1912.11370">
-            Kolesnikov, Alexander, et al. "Big transfer (bit): General visual representation learning."
-  Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part V 16. Springer International Publishing, 2020.</a><br>
-          
-
-
+          The paper challenges traditional convolutional neural networks (CNNs) with a novel architecture inspired by
+          natural language processing. This results in a new approach to computer vision tasks with proves to be
+          efficient and scalable at the same time.
         </p>
 
-        <h2>Team Members</h2>
-
+        <h5>Strengths</h5>
         <p>
+          The paper itself is really well written with clear objectives defined and ample proof to justify the
+          motivations behind each proposed novelity. The authors also conduct extensive ablation studies particularly
+          with the embedding layers as well as other architectures to prove their proposed method is an improvement from
+          the commpared approaches.
+        </p>
+        <p>
+          This research also changed the persepctive of the vision community, since this paper, there has been a
+          tremendous amount of interest in scaling and improving transformers.
+          One of the key strengths of this paper lies in its empirical validation. The authors demonstrate the superior
+          performance of ViTs on benchmark datasets, outperforming state-of-the-art CNNs. The scalability of ViTs allows
+          them to be trained on massive datasets, showcasing their potential for handling diverse and extensive visual
+          information.
+        </p>
+        <p>
+          The paper not only highlights the success of ViTs in image classification but also introduces the concept of
+          pre-training on large datasets and fine-tuning on task-specific data. This transfer learning strategy proves
+          to be instrumental in achieving remarkable results with limited labeled data.
+          Moreover, the authors delve into the interpretability of ViTs, showcasing their ability to highlight relevant
+          image regions. The attention maps generated by ViTs provide insights into the model's decision-making process,
+          contributing to improved transparency and understanding a critical aspect in real-world applications.
+        </p>
+
+        <h5>Weaknesses</h5>
+        <p>
+          The paper relies heavily on the authors' previous work on Big Transfer (BiT) and while the evaluation datasets
+          are quite diverse, the authors do not compare their approach to other state-of-the-art models.
+        </p>
+        <p>
+          While the paper explores the scaling of data needed for pre-training in detail, such experiments are not
+          highlighted in the main part of the paper (Table 6 in Appendix). Since transformer architecture is known to be
+          higly scalable, it should have been discussed in greater detail.
+        </p>
+        <p>
+          Some practical aspects of the architecture are not discussed, such how to handle images of different sizes and
+          shapes (e.g. non-square images). Shall we conseider padding for non-patch-multiple image sizes? How shall we
+          choose patch size for larger resolution? At a first glance, patch size should going up as the image size is
+          increased, otherwise each patch will be too homogeneous.
+        </p>
+        <p>
+          The paper discusses very little about the limitations or drawbacks of ViTs. The authors present this approach
+          as superior to CNNs in nearly every aspect, which is not necessarily true. For example, CNNs are known to be
+          more robust to adversarial attacks, which is not discussed in the paper.
+        </p>
+
+        <h5>Food for thought:</h5>
         <ul>
-          <li>Aditya Varshney</li>
-          <li> Gega Darakhvelidze </li>
+          <li>
+            Instead of just using a linear projection, can we do something better?
+            Maybe use a pretraining to learn better representaions of the input embeddings?
+          </li>
+          <li>
+            The main comparison done by the authors is against BiT<a href="#bit">[3]</a> paper. Other architectures such
+            as Bag of visual words could be used for comparison.
+          </li>
+          <li>
+            Can we combine the best of CNNs and Transformers?
+          </li>
         </ul>
 
-        </p>
+        <h5>Overal Score: 8 Strong Accept</h5>
+        <br>
 
+        <h3>References</h3>
+        <a name="vision-transformer">[1]</a> <a href="https://arxiv.org/pdf/2010.11929.pdf">
+          Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale."
+          arXiv preprint arXiv:2010.11929 (2020).</a><br>
+        <a name="transformer">[2]</a><a
+          href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">
+          Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30
+          (2017).</a><br>
+        <a name="bit">[3]</a><a href="https://arxiv.org/abs/1912.11370">
+          Kolesnikov, Alexander, et al. "Big transfer (bit): General visual representation learning."
+          Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part V
+          16. Springer International Publishing, 2020.</a><br>
+
+        <h2>Team Members</h2>
+        <ul>
+          <li>Aditya Varshney</li>
+          <li>Gega Darakhvelidze </li>
+        </ul>
 
       </div><!--col-->
     </div><!--row -->
