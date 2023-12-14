@@ -1,19 +1,20 @@
-# Class Project Website Template
+# CS 7150 : Deep Learning Semester Project
 
-Copy this template on github, and rename the repo to the name of your project.
+## Selected Research Paper : An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 
-Then go to the repo "Settings" and change "Webhook" settings, to "Add a webhook."
+## Train the model
+```python
+num_epochs = 10
+batch_size = 16
+exp_name = "vit_"+str(num_epochs)+"_"+str(batch_size)
+!python train.py --exp-name exp_name --epochs num_epochs --batch-size batch_size
+```
 
-Set up the webhook exactly as you see in the image below, so that it sends
-JSON push notifications to `https://expo.baulab.info/push`.  To work, it will
-need to have the secret pictured.
 
-<img src="webhook.png" style="max-width:100%">
 
-Then whenever you push your website, it will show up on
-https://expo.baulab.info/2023-Fall/[username].  Customize your
-`index.html`.
 
-Your final project report will be a static HTML website that
-shares your insights.  As you develop your
-methods, results, and narrative, add content as needed here.
+### Authors : 
+Aditya Varshney
+Gega Darakhvelidze 
+
+
